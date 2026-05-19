@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-postgres-agent-playground"
+version = "0.1.0"
+description = "A small FastAPI and Postgres project for exploring local agents and MCP-style tools."
+requires-python = ">=3.11"
+dependencies = [
+  "asyncpg>=0.30.0",
+  "fastapi>=0.115.0",
+  "pydantic-settings>=2.6.0",
+  "python-dotenv>=1.0.1",
+  "sqlalchemy[asyncio]>=2.0.36",
+  "uvicorn[standard]>=0.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27.2",
+  "pytest>=8.3.3",
+  "pytest-asyncio>=0.24.0",
+  "ruff>=0.7.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
