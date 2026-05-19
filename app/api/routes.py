@@ -123,7 +123,7 @@ async def transaction_chat() -> str:
         body: JSON.stringify({title: "Transaction question", input})
       });
       const data = await response.json();
-      answer.textContent = data.task.output + "\n\nTool calls: " + data.tool_calls.length;
+      answer.textContent = data.task.output + "\\n\\nTool calls: " + data.tool_calls.length;
       button.disabled = false;
     });
 
